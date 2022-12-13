@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SeleccionarMembresias">
+        <s:complexType />
+      </s:element>
+      <s:element name="SeleccionarMembresiasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SeleccionarMembresiasResult" type="tns:ArrayOfMEMBRESIA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfMEMBRESIA">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MEMBRESIA" nillable="true" type="tns:MEMBRESIA" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MEMBRESIA">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MEMID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CLIID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FECHAREGMEM" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FECHAEXOMEM" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CLIENTE1" type="tns:CLIENTE" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CLIENTE">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CLIID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MEMID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOMBRECLI" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CEDULACLI" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EMAILCLI" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MEMBRESIA" type="tns:MEMBRESIA" />
+          <s:element minOccurs="0" maxOccurs="1" name="FICHARENTA" type="tns:ArrayOfFICHARENTA" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfFICHARENTA">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FICHARENTA" nillable="true" type="tns:FICHARENTA" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FICHARENTA">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RENTID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PELIID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CLIID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FECHAREGRENT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FECHADEVRENT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FECHAENTRENT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CLIENTE" type="tns:CLIENTE" />
+          <s:element minOccurs="0" maxOccurs="1" name="PELICULA" type="tns:PELICULA" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PELICULA">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PELIID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOMBREPELI" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DIRECTORPELI" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GENEROPELI" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FICHARENTA" type="tns:ArrayOfFICHARENTA" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SeleccionarMembresiaPorID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SeleccionarMembresiaPorIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SeleccionarMembresiaPorIDResult" type="tns:MEMBRESIA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertarMembresia">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cli" type="tns:MEMBRESIA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertarMembresiaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ActualizarMembresia">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cli" type="tns:MEMBRESIA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarMembresiaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ActualizarMembresiaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarMembresia">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cli" type="tns:MEMBRESIA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarMembresiaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EliminarMembresiaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SeleccionarMembresiasDef">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SeleccionarMembresiasDefResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SeleccionarMembresiasDefResult" type="tns:ArrayOfMEMBRESIA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SeleccionarMembresiasSoapIn">
+    <wsdl:part name="parameters" element="tns:SeleccionarMembresias" />
+  </wsdl:message>
+  <wsdl:message name="SeleccionarMembresiasSoapOut">
+    <wsdl:part name="parameters" element="tns:SeleccionarMembresiasResponse" />
+  </wsdl:message>
+  <wsdl:message name="SeleccionarMembresiaPorIDSoapIn">
+    <wsdl:part name="parameters" element="tns:SeleccionarMembresiaPorID" />
+  </wsdl:message>
+  <wsdl:message name="SeleccionarMembresiaPorIDSoapOut">
+    <wsdl:part name="parameters" element="tns:SeleccionarMembresiaPorIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertarMembresiaSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertarMembresia" />
+  </wsdl:message>
+  <wsdl:message name="InsertarMembresiaSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertarMembresiaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarMembresiaSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarMembresia" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarMembresiaSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarMembresiaResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarMembresiaSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarMembresia" />
+  </wsdl:message>
+  <wsdl:message name="EliminarMembresiaSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarMembresiaResponse" />
+  </wsdl:message>
+  <wsdl:message name="SeleccionarMembresiasDefSoapIn">
+    <wsdl:part name="parameters" element="tns:SeleccionarMembresiasDef" />
+  </wsdl:message>
+  <wsdl:message name="SeleccionarMembresiasDefSoapOut">
+    <wsdl:part name="parameters" element="tns:SeleccionarMembresiasDefResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SWMembresiasSoap">
+    <wsdl:operation name="SeleccionarMembresias">
+      <wsdl:input message="tns:SeleccionarMembresiasSoapIn" />
+      <wsdl:output message="tns:SeleccionarMembresiasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SeleccionarMembresiaPorID">
+      <wsdl:input message="tns:SeleccionarMembresiaPorIDSoapIn" />
+      <wsdl:output message="tns:SeleccionarMembresiaPorIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarMembresia">
+      <wsdl:input message="tns:InsertarMembresiaSoapIn" />
+      <wsdl:output message="tns:InsertarMembresiaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarMembresia">
+      <wsdl:input message="tns:ActualizarMembresiaSoapIn" />
+      <wsdl:output message="tns:ActualizarMembresiaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarMembresia">
+      <wsdl:input message="tns:EliminarMembresiaSoapIn" />
+      <wsdl:output message="tns:EliminarMembresiaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SeleccionarMembresiasDef">
+      <wsdl:input message="tns:SeleccionarMembresiasDefSoapIn" />
+      <wsdl:output message="tns:SeleccionarMembresiasDefSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SWMembresiasSoap" type="tns:SWMembresiasSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SeleccionarMembresias">
+      <soap:operation soapAction="http://tempuri.org/SeleccionarMembresias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SeleccionarMembresiaPorID">
+      <soap:operation soapAction="http://tempuri.org/SeleccionarMembresiaPorID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarMembresia">
+      <soap:operation soapAction="http://tempuri.org/InsertarMembresia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarMembresia">
+      <soap:operation soapAction="http://tempuri.org/ActualizarMembresia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarMembresia">
+      <soap:operation soapAction="http://tempuri.org/EliminarMembresia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SeleccionarMembresiasDef">
+      <soap:operation soapAction="http://tempuri.org/SeleccionarMembresiasDef" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SWMembresiasSoap12" type="tns:SWMembresiasSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SeleccionarMembresias">
+      <soap12:operation soapAction="http://tempuri.org/SeleccionarMembresias" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SeleccionarMembresiaPorID">
+      <soap12:operation soapAction="http://tempuri.org/SeleccionarMembresiaPorID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarMembresia">
+      <soap12:operation soapAction="http://tempuri.org/InsertarMembresia" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarMembresia">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarMembresia" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarMembresia">
+      <soap12:operation soapAction="http://tempuri.org/EliminarMembresia" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SeleccionarMembresiasDef">
+      <soap12:operation soapAction="http://tempuri.org/SeleccionarMembresiasDef" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SWMembresias">
+    <wsdl:port name="SWMembresiasSoap" binding="tns:SWMembresiasSoap">
+      <soap:address location="https://localhost:44373/SWMembresias.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SWMembresiasSoap12" binding="tns:SWMembresiasSoap12">
+      <soap12:address location="https://localhost:44373/SWMembresias.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

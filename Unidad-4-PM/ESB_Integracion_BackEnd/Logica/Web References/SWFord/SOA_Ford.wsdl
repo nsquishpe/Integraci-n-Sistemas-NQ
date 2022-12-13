@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SeleccionarAutosChev">
+        <s:complexType />
+      </s:element>
+      <s:element name="SeleccionarAutosChevResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SeleccionarAutosChevResult" type="tns:ArrayOfAuto_FORD" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAuto_FORD">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Auto_FORD" nillable="true" type="tns:Auto_FORD" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Auto_FORD">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Marca_Ford" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Modelo_Ford" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cilindraje_Ford" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Anio_Ford" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Color_Ford" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tipo_Ford" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Con_Ford" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fecha_Ford" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="img_Ford" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InsertarAutoChev">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="chev" type="tns:Auto_FORD" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertarAutoChevResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EliminarAutoChev">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarAutoChevResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EliminarAutoChevResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarAutoChev">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="chev" type="tns:Auto_FORD" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarAutoChevResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ActualizarAutoChevResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SeleccionarAutosChevSoapIn">
+    <wsdl:part name="parameters" element="tns:SeleccionarAutosChev" />
+  </wsdl:message>
+  <wsdl:message name="SeleccionarAutosChevSoapOut">
+    <wsdl:part name="parameters" element="tns:SeleccionarAutosChevResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertarAutoChevSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertarAutoChev" />
+  </wsdl:message>
+  <wsdl:message name="InsertarAutoChevSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertarAutoChevResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarAutoChevSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarAutoChev" />
+  </wsdl:message>
+  <wsdl:message name="EliminarAutoChevSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarAutoChevResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarAutoChevSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarAutoChev" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarAutoChevSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarAutoChevResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SOA_FordSoap">
+    <wsdl:operation name="SeleccionarAutosChev">
+      <wsdl:input message="tns:SeleccionarAutosChevSoapIn" />
+      <wsdl:output message="tns:SeleccionarAutosChevSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarAutoChev">
+      <wsdl:input message="tns:InsertarAutoChevSoapIn" />
+      <wsdl:output message="tns:InsertarAutoChevSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarAutoChev">
+      <wsdl:input message="tns:EliminarAutoChevSoapIn" />
+      <wsdl:output message="tns:EliminarAutoChevSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarAutoChev">
+      <wsdl:input message="tns:ActualizarAutoChevSoapIn" />
+      <wsdl:output message="tns:ActualizarAutoChevSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SOA_FordSoap" type="tns:SOA_FordSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SeleccionarAutosChev">
+      <soap:operation soapAction="http://tempuri.org/SeleccionarAutosChev" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarAutoChev">
+      <soap:operation soapAction="http://tempuri.org/InsertarAutoChev" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarAutoChev">
+      <soap:operation soapAction="http://tempuri.org/EliminarAutoChev" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarAutoChev">
+      <soap:operation soapAction="http://tempuri.org/ActualizarAutoChev" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SOA_FordSoap12" type="tns:SOA_FordSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SeleccionarAutosChev">
+      <soap12:operation soapAction="http://tempuri.org/SeleccionarAutosChev" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarAutoChev">
+      <soap12:operation soapAction="http://tempuri.org/InsertarAutoChev" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarAutoChev">
+      <soap12:operation soapAction="http://tempuri.org/EliminarAutoChev" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarAutoChev">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarAutoChev" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SOA_Ford">
+    <wsdl:port name="SOA_FordSoap" binding="tns:SOA_FordSoap">
+      <soap:address location="https://localhost:44345/SOA_Ford.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SOA_FordSoap12" binding="tns:SOA_FordSoap12">
+      <soap12:address location="https://localhost:44345/SOA_Ford.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

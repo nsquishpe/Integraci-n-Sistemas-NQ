@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RentaPeliculasModelStoreContainer" CdmEntityContainer="RentaPeliculasEntities">
+    <EntitySetMapping Name="CLIENTE">
+      <EntityTypeMapping TypeName="RentaPeliculasModel.CLIENTE">
+        <MappingFragment StoreEntitySet="CLIENTE">
+          <ScalarProperty Name="CLIID" ColumnName="CLIID" />
+          <ScalarProperty Name="MEMID" ColumnName="MEMID" />
+          <ScalarProperty Name="NOMBRECLI" ColumnName="NOMBRECLI" />
+          <ScalarProperty Name="CEDULACLI" ColumnName="CEDULACLI" />
+          <ScalarProperty Name="EMAILCLI" ColumnName="EMAILCLI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FICHARENTA">
+      <EntityTypeMapping TypeName="RentaPeliculasModel.FICHARENTA">
+        <MappingFragment StoreEntitySet="FICHARENTA">
+          <ScalarProperty Name="RENTID" ColumnName="RENTID" />
+          <ScalarProperty Name="PELIID" ColumnName="PELIID" />
+          <ScalarProperty Name="CLIID" ColumnName="CLIID" />
+          <ScalarProperty Name="FECHAREGRENT" ColumnName="FECHAREGRENT" />
+          <ScalarProperty Name="FECHADEVRENT" ColumnName="FECHADEVRENT" />
+          <ScalarProperty Name="FECHAENTRENT" ColumnName="FECHAENTRENT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MEMBRESIA">
+      <EntityTypeMapping TypeName="RentaPeliculasModel.MEMBRESIA">
+        <MappingFragment StoreEntitySet="MEMBRESIA">
+          <ScalarProperty Name="MEMID" ColumnName="MEMID" />
+          <ScalarProperty Name="CLIID" ColumnName="CLIID" />
+          <ScalarProperty Name="FECHAREGMEM" ColumnName="FECHAREGMEM" />
+          <ScalarProperty Name="FECHAEXOMEM" ColumnName="FECHAEXOMEM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PELICULA">
+      <EntityTypeMapping TypeName="RentaPeliculasModel.PELICULA">
+        <MappingFragment StoreEntitySet="PELICULA">
+          <ScalarProperty Name="PELIID" ColumnName="PELIID" />
+          <ScalarProperty Name="NOMBREPELI" ColumnName="NOMBREPELI" />
+          <ScalarProperty Name="DIRECTORPELI" ColumnName="DIRECTORPELI" />
+          <ScalarProperty Name="GENEROPELI" ColumnName="GENEROPELI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SeleccionarClientes" FunctionName="RentaPeliculasModel.Store.SeleccionarClientes">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RentaPeliculasModel.SeleccionarClientes_Result">
+          <ScalarProperty Name="CLIID" ColumnName="CLIID" />
+          <ScalarProperty Name="MEMID" ColumnName="MEMID" />
+          <ScalarProperty Name="NOMBRECLI" ColumnName="NOMBRECLI" />
+          <ScalarProperty Name="CEDULACLI" ColumnName="CEDULACLI" />
+          <ScalarProperty Name="EMAILCLI" ColumnName="EMAILCLI" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SeleccionarClientesPorID" FunctionName="RentaPeliculasModel.Store.SeleccionarClientesPorID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RentaPeliculasModel.SeleccionarClientesPorID_Result">
+          <ScalarProperty Name="CLIID" ColumnName="CLIID" />
+          <ScalarProperty Name="MEMID" ColumnName="MEMID" />
+          <ScalarProperty Name="NOMBRECLI" ColumnName="NOMBRECLI" />
+          <ScalarProperty Name="CEDULACLI" ColumnName="CEDULACLI" />
+          <ScalarProperty Name="EMAILCLI" ColumnName="EMAILCLI" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ActualizarClienteSP" FunctionName="RentaPeliculasModel.Store.ActualizarClienteSP" />
+    <FunctionImportMapping FunctionImportName="EliminarClienteSP" FunctionName="RentaPeliculasModel.Store.EliminarClienteSP" />
+    <FunctionImportMapping FunctionImportName="InsertarClienteSP" FunctionName="RentaPeliculasModel.Store.InsertarClienteSP" />
+    <FunctionImportMapping FunctionImportName="SeleccionarClientePorID" FunctionName="RentaPeliculasModel.Store.SeleccionarClientePorID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RentaPeliculasModel.SeleccionarClientePorID_Result">
+          <ScalarProperty Name="CLIID" ColumnName="CLIID" />
+          <ScalarProperty Name="MEMID" ColumnName="MEMID" />
+          <ScalarProperty Name="NOMBRECLI" ColumnName="NOMBRECLI" />
+          <ScalarProperty Name="CEDULACLI" ColumnName="CEDULACLI" />
+          <ScalarProperty Name="EMAILCLI" ColumnName="EMAILCLI" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ActualizarMembresiaSP" FunctionName="RentaPeliculasModel.Store.ActualizarMembresiaSP" />
+    <FunctionImportMapping FunctionImportName="ActualizarPeliculaSP" FunctionName="RentaPeliculasModel.Store.ActualizarPeliculaSP" />
+    <FunctionImportMapping FunctionImportName="ActualizarRentaSP" FunctionName="RentaPeliculasModel.Store.ActualizarRentaSP" />
+    <FunctionImportMapping FunctionImportName="EliminarMembresiaSP" FunctionName="RentaPeliculasModel.Store.EliminarMembresiaSP" />
+    <FunctionImportMapping FunctionImportName="EliminarPeliculaSP" FunctionName="RentaPeliculasModel.Store.EliminarPeliculaSP" />
+    <FunctionImportMapping FunctionImportName="EliminarRentaSP" FunctionName="RentaPeliculasModel.Store.EliminarRentaSP" />
+    <FunctionImportMapping FunctionImportName="InsertarMembresiaSP" FunctionName="RentaPeliculasModel.Store.InsertarMembresiaSP" />
+    <FunctionImportMapping FunctionImportName="InsertarPeliculaSP" FunctionName="RentaPeliculasModel.Store.InsertarPeliculaSP" />
+    <FunctionImportMapping FunctionImportName="InsertarRentaSP" FunctionName="RentaPeliculasModel.Store.InsertarRentaSP" />
+    <FunctionImportMapping FunctionImportName="SeleccionarMembresiasSP" FunctionName="RentaPeliculasModel.Store.SeleccionarMembresiasSP">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RentaPeliculasModel.SeleccionarMembresiasSP_Result">
+          <ScalarProperty Name="MEMID" ColumnName="MEMID" />
+          <ScalarProperty Name="CLIID" ColumnName="CLIID" />
+          <ScalarProperty Name="FECHAREGMEM" ColumnName="FECHAREGMEM" />
+          <ScalarProperty Name="FECHAEXOMEM" ColumnName="FECHAEXOMEM" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SeleccionarPeliculasSP" FunctionName="RentaPeliculasModel.Store.SeleccionarPeliculasSP">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RentaPeliculasModel.SeleccionarPeliculasSP_Result">
+          <ScalarProperty Name="PELIID" ColumnName="PELIID" />
+          <ScalarProperty Name="NOMBREPELI" ColumnName="NOMBREPELI" />
+          <ScalarProperty Name="DIRECTORPELI" ColumnName="DIRECTORPELI" />
+          <ScalarProperty Name="GENEROPELI" ColumnName="GENEROPELI" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SeleccionarRentasSP" FunctionName="RentaPeliculasModel.Store.SeleccionarRentasSP">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RentaPeliculasModel.SeleccionarRentasSP_Result">
+          <ScalarProperty Name="RENTID" ColumnName="RENTID" />
+          <ScalarProperty Name="PELIID" ColumnName="PELIID" />
+          <ScalarProperty Name="CLIID" ColumnName="CLIID" />
+          <ScalarProperty Name="FECHAREGRENT" ColumnName="FECHAREGRENT" />
+          <ScalarProperty Name="FECHADEVRENT" ColumnName="FECHADEVRENT" />
+          <ScalarProperty Name="FECHAENTRENT" ColumnName="FECHAENTRENT" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

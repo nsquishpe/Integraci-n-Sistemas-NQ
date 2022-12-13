@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ChevroletModelStoreContainer" CdmEntityContainer="ChevroletEntities">
+    <EntitySetMapping Name="Auto_CHEV">
+      <EntityTypeMapping TypeName="ChevroletModel.Auto_CHEV">
+        <MappingFragment StoreEntitySet="Auto_CHEV">
+          <ScalarProperty Name="img_Chevrolet" ColumnName="img_Chevrolet" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Marca_Chevrolet" ColumnName="Marca_Chevrolet" />
+          <ScalarProperty Name="Modelo_Chevrolet" ColumnName="Modelo_Chevrolet" />
+          <ScalarProperty Name="Cilindraje_Chevrolet" ColumnName="Cilindraje_Chevrolet" />
+          <ScalarProperty Name="Anio_Chevrolet" ColumnName="Anio_Chevrolet" />
+          <ScalarProperty Name="Color_Chevrolet" ColumnName="Color_Chevrolet" />
+          <ScalarProperty Name="Tipo_Chevrolet" ColumnName="Tipo_Chevrolet" />
+          <ScalarProperty Name="Con_Chevrolet" ColumnName="Con_Chevrolet" />
+          <ScalarProperty Name="Fecha_Chevrolet" ColumnName="Fecha_Chevrolet" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

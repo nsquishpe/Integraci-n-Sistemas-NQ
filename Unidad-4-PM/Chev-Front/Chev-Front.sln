@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32519.379
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chev-Front", "Chev-Front.csproj", "{B1C313A8-6229-4F18-8181-43195EC33032}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B1C313A8-6229-4F18-8181-43195EC33032}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1C313A8-6229-4F18-8181-43195EC33032}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1C313A8-6229-4F18-8181-43195EC33032}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1C313A8-6229-4F18-8181-43195EC33032}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {132DB523-7DB6-45B7-9BE2-ECFB4611E843}
+	EndGlobalSection
+EndGlobal

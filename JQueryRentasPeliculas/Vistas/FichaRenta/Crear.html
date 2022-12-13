@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="../../Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="../../Scripts/jquery-3.6.0.min.js"></script>
+    <script src="../../Scripts/MisScripts/FichaRenta.js"></script>
+    <link href="../../Content/Eslitos/MisEstilos.css" rel="stylesheet" />
+    <script src="../../Scripts/bootstrap.min.js"></script>
+    <script src="../../Scripts/Menu.js"></script>
+    <script src="../../Scripts/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img class="logo horizontal-logo" src="https://cdn-icons-png.flaticon.com/512/2809/2809590.png" alt="Renta Películas" style="width:80px">
+                Renta Peliculas
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="background-color:black">
+                        Clientes
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="../Cliente/Consultar.html">Consultar</a></li>
+                        <li><a class="dropdown-item" href="../Cliente/Crear.html">Crear</a></li>
+                        <li><a class="dropdown-item" href="../Cliente/Actualizar.html">Actualizar</a></li>
+                        <li><a class="dropdown-item" href="../Cliente/Eliminar.html">Eliminar</a></li>
+                        <li><a class="dropdown-item" href="../Cliente/Filtrar.html">Filtrar</a></li>
+                    </ul>
+                </div>
+
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="background-color:black">
+                        Películas
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="../Pelicula/Consultar.html">Consultar</a></li>
+                        <li><a class="dropdown-item" href="../Pelicula/Crear.html">Crear</a></li>
+                        <li><a class="dropdown-item" href="../Pelicula/Actualizar.html">Actualizar</a></li>
+                        <li><a class="dropdown-item" href="../Pelicula/Eliminar.html">Eliminar</a></li>
+                        <li><a class="dropdown-item" href="../Pelicula/Filtrar.html">Filtrar</a></li>
+                    </ul>
+                </div>
+
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="background-color:black">
+                        Membresías
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="../Membresia/Consultar.html">Consultar</a></li>
+                        <li><a class="dropdown-item" href="../Membresia/Crear.html">Crear</a></li>
+                        <li><a class="dropdown-item" href="../Membresia/Actualizar.html">Actualizar</a></li>
+                        <li><a class="dropdown-item" href="../Membresia/Eliminar.html">Eliminar</a></li>
+                        <li><a class="dropdown-item" href="../Membresia/Filtrar.html">Filtrar</a></li>
+                    </ul>
+                </div>
+
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="background-color:black">
+                        Fichas Rentas
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="Consultar.html">Consultar</a></li>
+                        <li><a class="dropdown-item" href="Crear.html">Crear</a></li>
+                        <li><a class="dropdown-item" href="Actualizar.html">Actualizar</a></li>
+                        <li><a class="dropdown-item" href="Eliminar.html">Eliminar</a></li>
+                        <li><a class="dropdown-item" href="Filtrar.html">Filtrar</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <div class="container">
+        <br />
+        <h1>Crear Fichas Renta:</h1>
+        <br />
+        <div id="renta">
+            <div>ID Ficha Renta:</div>
+            <div>
+                <div> <input type="text" id="renid" /> </div>
+            </div>
+
+            <div>ID Película:</div>
+            <div>
+                <div> <input type="text" id="pelid" /> </div>
+            </div>
+
+            <div>ID Cliente:</div>
+            <div>
+                <div> <input type="text" id="clid" /> </div>
+            </div>
+            <div>Fecha Registro:</div>
+            <div>
+                <div> <input type="text" id="fecha1" /> </div>
+            </div>
+            <div>Fecha Devolución:</div>
+            <div>
+                <div> <input type="text" id="fecha2" /> </div>
+            </div>
+            <div>Fecha Entrega:</div>
+            <div>
+                <div> <input type="text" id="fecha3" /> </div>
+            </div>
+            <br />
+            <br />
+            <input class="boton_personalizado" type="button" id="crear" value="Crear" />
+        </div>
+    </div>
+    <script>
+        $("#crear").click(
+            function () {
+                CrearRentas();
+            });
+    </script>
+</body>
+</html>

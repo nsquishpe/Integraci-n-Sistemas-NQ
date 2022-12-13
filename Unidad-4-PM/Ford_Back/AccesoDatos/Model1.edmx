@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="FordModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Auto_FORD">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="Marca_Ford" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Modelo_Ford" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Cilindraje_Ford" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Anio_Ford" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Color_Ford" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Tipo_Ford" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Con_Ford" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Fecha_Ford" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="img_Ford" Type="nchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="FordModelStoreContainer">
+          <EntitySet Name="Auto_FORD" EntityType="Self.Auto_FORD" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FordModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Auto_FORD">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="Marca_Ford" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Modelo_Ford" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Cilindraje_Ford" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Anio_Ford" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Color_Ford" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Tipo_Ford" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Con_Ford" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Fecha_Ford" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="img_Ford" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="FordEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Auto_FORD" EntityType="Self.Auto_FORD" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FordModelStoreContainer" CdmEntityContainer="FordEntities1">
+          <EntitySetMapping Name="Auto_FORD">
+            <EntityTypeMapping TypeName="FordModel.Auto_FORD">
+              <MappingFragment StoreEntitySet="Auto_FORD">
+                <ScalarProperty Name="img_Ford" ColumnName="img_Ford" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Marca_Ford" ColumnName="Marca_Ford" />
+                <ScalarProperty Name="Modelo_Ford" ColumnName="Modelo_Ford" />
+                <ScalarProperty Name="Cilindraje_Ford" ColumnName="Cilindraje_Ford" />
+                <ScalarProperty Name="Anio_Ford" ColumnName="Anio_Ford" />
+                <ScalarProperty Name="Color_Ford" ColumnName="Color_Ford" />
+                <ScalarProperty Name="Tipo_Ford" ColumnName="Tipo_Ford" />
+                <ScalarProperty Name="Con_Ford" ColumnName="Con_Ford" />
+                <ScalarProperty Name="Fecha_Ford" ColumnName="Fecha_Ford" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SeleccionarPeliculas">
+        <s:complexType />
+      </s:element>
+      <s:element name="SeleccionarPeliculasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SeleccionarPeliculasResult" type="tns:ArrayOfPELICULA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPELICULA">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PELICULA" nillable="true" type="tns:PELICULA" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PELICULA">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PELIID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOMBREPELI" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DIRECTORPELI" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GENEROPELI" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FICHARENTA" type="tns:ArrayOfFICHARENTA" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfFICHARENTA">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FICHARENTA" nillable="true" type="tns:FICHARENTA" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FICHARENTA">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RENTID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PELIID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CLIID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FECHAREGRENT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FECHADEVRENT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FECHAENTRENT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CLIENTE" type="tns:CLIENTE" />
+          <s:element minOccurs="0" maxOccurs="1" name="PELICULA" type="tns:PELICULA" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CLIENTE">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CLIID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MEMID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOMBRECLI" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CEDULACLI" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EMAILCLI" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MEMBRESIA" type="tns:MEMBRESIA" />
+          <s:element minOccurs="0" maxOccurs="1" name="FICHARENTA" type="tns:ArrayOfFICHARENTA" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MEMBRESIA">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MEMID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CLIID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FECHAREGMEM" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FECHAEXOMEM" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CLIENTE1" type="tns:CLIENTE" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SeleccionarPeliculaPorID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SeleccionarPeliculaPorIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SeleccionarPeliculaPorIDResult" type="tns:PELICULA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertarPelicula">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pel" type="tns:PELICULA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertarPeliculaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ActualizarPelicula">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pel" type="tns:PELICULA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarPeliculaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ActualizarPeliculaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarPelicula">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pel" type="tns:PELICULA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarPeliculaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EliminarPeliculaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SeleccionarPeliculasDef">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SeleccionarPeliculasDefResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SeleccionarPeliculasDefResult" type="tns:ArrayOfPELICULA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SeleccionarPeliculasSoapIn">
+    <wsdl:part name="parameters" element="tns:SeleccionarPeliculas" />
+  </wsdl:message>
+  <wsdl:message name="SeleccionarPeliculasSoapOut">
+    <wsdl:part name="parameters" element="tns:SeleccionarPeliculasResponse" />
+  </wsdl:message>
+  <wsdl:message name="SeleccionarPeliculaPorIDSoapIn">
+    <wsdl:part name="parameters" element="tns:SeleccionarPeliculaPorID" />
+  </wsdl:message>
+  <wsdl:message name="SeleccionarPeliculaPorIDSoapOut">
+    <wsdl:part name="parameters" element="tns:SeleccionarPeliculaPorIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertarPeliculaSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertarPelicula" />
+  </wsdl:message>
+  <wsdl:message name="InsertarPeliculaSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertarPeliculaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarPeliculaSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarPelicula" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarPeliculaSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarPeliculaResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarPeliculaSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarPelicula" />
+  </wsdl:message>
+  <wsdl:message name="EliminarPeliculaSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarPeliculaResponse" />
+  </wsdl:message>
+  <wsdl:message name="SeleccionarPeliculasDefSoapIn">
+    <wsdl:part name="parameters" element="tns:SeleccionarPeliculasDef" />
+  </wsdl:message>
+  <wsdl:message name="SeleccionarPeliculasDefSoapOut">
+    <wsdl:part name="parameters" element="tns:SeleccionarPeliculasDefResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SWPeliculasSoap">
+    <wsdl:operation name="SeleccionarPeliculas">
+      <wsdl:input message="tns:SeleccionarPeliculasSoapIn" />
+      <wsdl:output message="tns:SeleccionarPeliculasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SeleccionarPeliculaPorID">
+      <wsdl:input message="tns:SeleccionarPeliculaPorIDSoapIn" />
+      <wsdl:output message="tns:SeleccionarPeliculaPorIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarPelicula">
+      <wsdl:input message="tns:InsertarPeliculaSoapIn" />
+      <wsdl:output message="tns:InsertarPeliculaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarPelicula">
+      <wsdl:input message="tns:ActualizarPeliculaSoapIn" />
+      <wsdl:output message="tns:ActualizarPeliculaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarPelicula">
+      <wsdl:input message="tns:EliminarPeliculaSoapIn" />
+      <wsdl:output message="tns:EliminarPeliculaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SeleccionarPeliculasDef">
+      <wsdl:input message="tns:SeleccionarPeliculasDefSoapIn" />
+      <wsdl:output message="tns:SeleccionarPeliculasDefSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SWPeliculasSoap" type="tns:SWPeliculasSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SeleccionarPeliculas">
+      <soap:operation soapAction="http://tempuri.org/SeleccionarPeliculas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SeleccionarPeliculaPorID">
+      <soap:operation soapAction="http://tempuri.org/SeleccionarPeliculaPorID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarPelicula">
+      <soap:operation soapAction="http://tempuri.org/InsertarPelicula" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarPelicula">
+      <soap:operation soapAction="http://tempuri.org/ActualizarPelicula" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarPelicula">
+      <soap:operation soapAction="http://tempuri.org/EliminarPelicula" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SeleccionarPeliculasDef">
+      <soap:operation soapAction="http://tempuri.org/SeleccionarPeliculasDef" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SWPeliculasSoap12" type="tns:SWPeliculasSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SeleccionarPeliculas">
+      <soap12:operation soapAction="http://tempuri.org/SeleccionarPeliculas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SeleccionarPeliculaPorID">
+      <soap12:operation soapAction="http://tempuri.org/SeleccionarPeliculaPorID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarPelicula">
+      <soap12:operation soapAction="http://tempuri.org/InsertarPelicula" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarPelicula">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarPelicula" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarPelicula">
+      <soap12:operation soapAction="http://tempuri.org/EliminarPelicula" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SeleccionarPeliculasDef">
+      <soap12:operation soapAction="http://tempuri.org/SeleccionarPeliculasDef" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SWPeliculas">
+    <wsdl:port name="SWPeliculasSoap" binding="tns:SWPeliculasSoap">
+      <soap:address location="https://localhost:44373/SWPeliculas.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SWPeliculasSoap12" binding="tns:SWPeliculasSoap12">
+      <soap12:address location="https://localhost:44373/SWPeliculas.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

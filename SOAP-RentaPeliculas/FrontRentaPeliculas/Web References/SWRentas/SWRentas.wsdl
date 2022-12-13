@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SeleccionarRenta">
+        <s:complexType />
+      </s:element>
+      <s:element name="SeleccionarRentaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SeleccionarRentaResult" type="tns:ArrayOfFICHARENTA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfFICHARENTA">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FICHARENTA" nillable="true" type="tns:FICHARENTA" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FICHARENTA">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RENTID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PELIID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CLIID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FECHAREGRENT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FECHADEVRENT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FECHAENTRENT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CLIENTE" type="tns:CLIENTE" />
+          <s:element minOccurs="0" maxOccurs="1" name="PELICULA" type="tns:PELICULA" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CLIENTE">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CLIID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MEMID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOMBRECLI" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CEDULACLI" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EMAILCLI" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MEMBRESIA" type="tns:MEMBRESIA" />
+          <s:element minOccurs="0" maxOccurs="1" name="FICHARENTA" type="tns:ArrayOfFICHARENTA" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MEMBRESIA">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MEMID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CLIID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FECHAREGMEM" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FECHAEXOMEM" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CLIENTE1" type="tns:CLIENTE" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PELICULA">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PELIID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOMBREPELI" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DIRECTORPELI" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GENEROPELI" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FICHARENTA" type="tns:ArrayOfFICHARENTA" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SeleccionarRentaPorID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SeleccionarRentaPorIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SeleccionarRentaPorIDResult" type="tns:FICHARENTA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertarRenta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ren" type="tns:FICHARENTA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertarRentaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ActualizarRenta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ren" type="tns:FICHARENTA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarRentaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ActualizarRentaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarRenta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ren" type="tns:FICHARENTA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarRentaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EliminarRentaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SeleccionarRentaDef">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SeleccionarRentaDefResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SeleccionarRentaDefResult" type="tns:ArrayOfFICHARENTA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SeleccionarRentaSoapIn">
+    <wsdl:part name="parameters" element="tns:SeleccionarRenta" />
+  </wsdl:message>
+  <wsdl:message name="SeleccionarRentaSoapOut">
+    <wsdl:part name="parameters" element="tns:SeleccionarRentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="SeleccionarRentaPorIDSoapIn">
+    <wsdl:part name="parameters" element="tns:SeleccionarRentaPorID" />
+  </wsdl:message>
+  <wsdl:message name="SeleccionarRentaPorIDSoapOut">
+    <wsdl:part name="parameters" element="tns:SeleccionarRentaPorIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertarRentaSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertarRenta" />
+  </wsdl:message>
+  <wsdl:message name="InsertarRentaSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertarRentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarRentaSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarRenta" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarRentaSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarRentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarRentaSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarRenta" />
+  </wsdl:message>
+  <wsdl:message name="EliminarRentaSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarRentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="SeleccionarRentaDefSoapIn">
+    <wsdl:part name="parameters" element="tns:SeleccionarRentaDef" />
+  </wsdl:message>
+  <wsdl:message name="SeleccionarRentaDefSoapOut">
+    <wsdl:part name="parameters" element="tns:SeleccionarRentaDefResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SWRentasSoap">
+    <wsdl:operation name="SeleccionarRenta">
+      <wsdl:input message="tns:SeleccionarRentaSoapIn" />
+      <wsdl:output message="tns:SeleccionarRentaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SeleccionarRentaPorID">
+      <wsdl:input message="tns:SeleccionarRentaPorIDSoapIn" />
+      <wsdl:output message="tns:SeleccionarRentaPorIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarRenta">
+      <wsdl:input message="tns:InsertarRentaSoapIn" />
+      <wsdl:output message="tns:InsertarRentaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarRenta">
+      <wsdl:input message="tns:ActualizarRentaSoapIn" />
+      <wsdl:output message="tns:ActualizarRentaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarRenta">
+      <wsdl:input message="tns:EliminarRentaSoapIn" />
+      <wsdl:output message="tns:EliminarRentaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SeleccionarRentaDef">
+      <wsdl:input message="tns:SeleccionarRentaDefSoapIn" />
+      <wsdl:output message="tns:SeleccionarRentaDefSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SWRentasSoap" type="tns:SWRentasSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SeleccionarRenta">
+      <soap:operation soapAction="http://tempuri.org/SeleccionarRenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SeleccionarRentaPorID">
+      <soap:operation soapAction="http://tempuri.org/SeleccionarRentaPorID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarRenta">
+      <soap:operation soapAction="http://tempuri.org/InsertarRenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarRenta">
+      <soap:operation soapAction="http://tempuri.org/ActualizarRenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarRenta">
+      <soap:operation soapAction="http://tempuri.org/EliminarRenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SeleccionarRentaDef">
+      <soap:operation soapAction="http://tempuri.org/SeleccionarRentaDef" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SWRentasSoap12" type="tns:SWRentasSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SeleccionarRenta">
+      <soap12:operation soapAction="http://tempuri.org/SeleccionarRenta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SeleccionarRentaPorID">
+      <soap12:operation soapAction="http://tempuri.org/SeleccionarRentaPorID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarRenta">
+      <soap12:operation soapAction="http://tempuri.org/InsertarRenta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarRenta">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarRenta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarRenta">
+      <soap12:operation soapAction="http://tempuri.org/EliminarRenta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SeleccionarRentaDef">
+      <soap12:operation soapAction="http://tempuri.org/SeleccionarRentaDef" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SWRentas">
+    <wsdl:port name="SWRentasSoap" binding="tns:SWRentasSoap">
+      <soap:address location="https://localhost:44373/SWRentas.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SWRentasSoap12" binding="tns:SWRentasSoap12">
+      <soap12:address location="https://localhost:44373/SWRentas.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

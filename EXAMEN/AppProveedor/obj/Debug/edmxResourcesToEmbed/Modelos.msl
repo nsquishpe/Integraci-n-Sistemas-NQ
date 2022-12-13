@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ProveedorModelStoreContainer" CdmEntityContainer="ProveedorEntities">
+    <EntitySetMapping Name="Proveedores">
+      <EntityTypeMapping TypeName="ProveedorModel.Proveedores">
+        <MappingFragment StoreEntitySet="Proveedores">
+          <ScalarProperty Name="ProvID" ColumnName="ProvID" />
+          <ScalarProperty Name="ProvNombre" ColumnName="ProvNombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

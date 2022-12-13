@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RentaPeliculasModelStoreContainer" CdmEntityContainer="RentaPeliculasEntities">
+    <EntitySetMapping Name="CLIENTE">
+      <EntityTypeMapping TypeName="RentaPeliculasModel.CLIENTE">
+        <MappingFragment StoreEntitySet="CLIENTE">
+          <ScalarProperty Name="CLIID" ColumnName="CLIID" />
+          <ScalarProperty Name="MEMID" ColumnName="MEMID" />
+          <ScalarProperty Name="NOMBRECLI" ColumnName="NOMBRECLI" />
+          <ScalarProperty Name="CEDULACLI" ColumnName="CEDULACLI" />
+          <ScalarProperty Name="EMAILCLI" ColumnName="EMAILCLI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FICHARENTA">
+      <EntityTypeMapping TypeName="RentaPeliculasModel.FICHARENTA">
+        <MappingFragment StoreEntitySet="FICHARENTA">
+          <ScalarProperty Name="RENTID" ColumnName="RENTID" />
+          <ScalarProperty Name="PELIID" ColumnName="PELIID" />
+          <ScalarProperty Name="CLIID" ColumnName="CLIID" />
+          <ScalarProperty Name="FECHAREGRENT" ColumnName="FECHAREGRENT" />
+          <ScalarProperty Name="FECHADEVRENT" ColumnName="FECHADEVRENT" />
+          <ScalarProperty Name="FECHAENTRENT" ColumnName="FECHAENTRENT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MEMBRESIA">
+      <EntityTypeMapping TypeName="RentaPeliculasModel.MEMBRESIA">
+        <MappingFragment StoreEntitySet="MEMBRESIA">
+          <ScalarProperty Name="MEMID" ColumnName="MEMID" />
+          <ScalarProperty Name="CLIID" ColumnName="CLIID" />
+          <ScalarProperty Name="FECHAREGMEM" ColumnName="FECHAREGMEM" />
+          <ScalarProperty Name="FECHAEXOMEM" ColumnName="FECHAEXOMEM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PELICULA">
+      <EntityTypeMapping TypeName="RentaPeliculasModel.PELICULA">
+        <MappingFragment StoreEntitySet="PELICULA">
+          <ScalarProperty Name="PELIID" ColumnName="PELIID" />
+          <ScalarProperty Name="NOMBREPELI" ColumnName="NOMBREPELI" />
+          <ScalarProperty Name="DIRECTORPELI" ColumnName="DIRECTORPELI" />
+          <ScalarProperty Name="GENEROPELI" ColumnName="GENEROPELI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

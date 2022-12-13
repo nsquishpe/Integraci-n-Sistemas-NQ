@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ChevroletModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Auto_CHEV">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="Marca_Chevrolet" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="Modelo_Chevrolet" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="Cilindraje_Chevrolet" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="Anio_Chevrolet" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="Color_Chevrolet" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="Tipo_Chevrolet" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="Con_Chevrolet" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="Fecha_Chevrolet" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="img_Chevrolet" Type="nchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="ChevroletModelStoreContainer">
+    <EntitySet Name="Auto_CHEV" EntityType="Self.Auto_CHEV" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

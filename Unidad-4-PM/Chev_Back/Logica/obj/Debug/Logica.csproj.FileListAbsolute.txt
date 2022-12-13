@@ -1,0 +1,14 @@
+C:\Users\Laptop\Documents\6to_Semestre\IntegraciónSistemasServicios\Unidad4\Chev_Back\Logica\bin\Debug\Logica.dll
+C:\Users\Laptop\Documents\6to_Semestre\IntegraciónSistemasServicios\Unidad4\Chev_Back\Logica\bin\Debug\Logica.pdb
+C:\Users\Laptop\Documents\6to_Semestre\IntegraciónSistemasServicios\Unidad4\Chev_Back\Logica\bin\Debug\AccesoDatos.dll
+C:\Users\Laptop\Documents\6to_Semestre\IntegraciónSistemasServicios\Unidad4\Chev_Back\Logica\bin\Debug\Datos.dll
+C:\Users\Laptop\Documents\6to_Semestre\IntegraciónSistemasServicios\Unidad4\Chev_Back\Logica\bin\Debug\EntityFramework.dll
+C:\Users\Laptop\Documents\6to_Semestre\IntegraciónSistemasServicios\Unidad4\Chev_Back\Logica\bin\Debug\AccesoDatos.pdb
+C:\Users\Laptop\Documents\6to_Semestre\IntegraciónSistemasServicios\Unidad4\Chev_Back\Logica\bin\Debug\AccesoDatos.dll.config
+C:\Users\Laptop\Documents\6to_Semestre\IntegraciónSistemasServicios\Unidad4\Chev_Back\Logica\bin\Debug\Datos.pdb
+C:\Users\Laptop\Documents\6to_Semestre\IntegraciónSistemasServicios\Unidad4\Chev_Back\Logica\bin\Debug\EntityFramework.xml
+C:\Users\Laptop\Documents\6to_Semestre\IntegraciónSistemasServicios\Unidad4\Chev_Back\Logica\obj\Debug\Logica.csproj.AssemblyReference.cache
+C:\Users\Laptop\Documents\6to_Semestre\IntegraciónSistemasServicios\Unidad4\Chev_Back\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
+C:\Users\Laptop\Documents\6to_Semestre\IntegraciónSistemasServicios\Unidad4\Chev_Back\Logica\obj\Debug\Logica.csproj.CopyComplete
+C:\Users\Laptop\Documents\6to_Semestre\IntegraciónSistemasServicios\Unidad4\Chev_Back\Logica\obj\Debug\Logica.dll
+C:\Users\Laptop\Documents\6to_Semestre\IntegraciónSistemasServicios\Unidad4\Chev_Back\Logica\obj\Debug\Logica.pdb

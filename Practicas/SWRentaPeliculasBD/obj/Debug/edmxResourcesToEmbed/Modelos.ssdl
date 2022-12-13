@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RentaPeliculasModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CLIENTE">
+    <Key>
+      <PropertyRef Name="CLIID" />
+    </Key>
+    <Property Name="CLIID" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="MEMID" Type="varchar" MaxLength="30" />
+    <Property Name="NOMBRECLI" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="CEDULACLI" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="EMAILCLI" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FICHARENTA">
+    <Key>
+      <PropertyRef Name="RENTID" />
+    </Key>
+    <Property Name="RENTID" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="PELIID" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="CLIID" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="FECHAREGRENT" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="FECHADEVRENT" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="FECHAENTRENT" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MEMBRESIA">
+    <Key>
+      <PropertyRef Name="MEMID" />
+    </Key>
+    <Property Name="MEMID" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="CLIID" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="FECHAREGMEM" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="FECHAEXOMEM" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PELICULA">
+    <Key>
+      <PropertyRef Name="PELIID" />
+    </Key>
+    <Property Name="PELIID" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="NOMBREPELI" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="DIRECTORPELI" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="GENEROPELI" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_CLIENTE_RELATIONS_MEMBRESI">
+    <End Role="MEMBRESIA" Type="Self.MEMBRESIA" Multiplicity="0..1" />
+    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MEMBRESIA">
+        <PropertyRef Name="MEMID" />
+      </Principal>
+      <Dependent Role="CLIENTE">
+        <PropertyRef Name="MEMID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FICHAREN_RELATIONS_CLIENTE">
+    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="1" />
+    <End Role="FICHARENTA" Type="Self.FICHARENTA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENTE">
+        <PropertyRef Name="CLIID" />
+      </Principal>
+      <Dependent Role="FICHARENTA">
+        <PropertyRef Name="CLIID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FICHAREN_RELATIONS_PELICULA">
+    <End Role="PELICULA" Type="Self.PELICULA" Multiplicity="1" />
+    <End Role="FICHARENTA" Type="Self.FICHARENTA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PELICULA">
+        <PropertyRef Name="PELIID" />
+      </Principal>
+      <Dependent Role="FICHARENTA">
+        <PropertyRef Name="PELIID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MEMBRESI_RELATIONS_CLIENTE">
+    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="1" />
+    <End Role="MEMBRESIA" Type="Self.MEMBRESIA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENTE">
+        <PropertyRef Name="CLIID" />
+      </Principal>
+      <Dependent Role="MEMBRESIA">
+        <PropertyRef Name="CLIID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="ActualizarClienteSP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CLIID" Type="varchar" Mode="In" />
+    <Parameter Name="NOMBRECLI" Type="varchar" Mode="In" />
+    <Parameter Name="CEDULACLI" Type="varchar" Mode="In" />
+    <Parameter Name="EMAILCLI" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="ActualizarMembresiaSP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MEMID" Type="varchar" Mode="In" />
+    <Parameter Name="CLIID" Type="varchar" Mode="In" />
+    <Parameter Name="FECHAREGMEM" Type="varchar" Mode="In" />
+    <Parameter Name="FECHAEXOMEM" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="ActualizarPeliculaSP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PELID" Type="varchar" Mode="In" />
+    <Parameter Name="NOMPEL" Type="varchar" Mode="In" />
+    <Parameter Name="DIRPEL" Type="varchar" Mode="In" />
+    <Parameter Name="GENPEL" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="ActualizarRentaSP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RENID" Type="varchar" Mode="In" />
+    <Parameter Name="PELID" Type="varchar" Mode="In" />
+    <Parameter Name="CLID" Type="varchar" Mode="In" />
+    <Parameter Name="FECHA1" Type="varchar" Mode="In" />
+    <Parameter Name="FECHA2" Type="varchar" Mode="In" />
+    <Parameter Name="FECHA3" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="EliminarClienteSP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CLIID" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="EliminarMembresiaSP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MEMID" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="EliminarPeliculaSP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PELID" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="EliminarRentaSP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RENID" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="InsertarClienteSP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CLIID" Type="varchar" Mode="In" />
+    <Parameter Name="NOMBRECLI" Type="varchar" Mode="In" />
+    <Parameter Name="CEDULACLI" Type="varchar" Mode="In" />
+    <Parameter Name="EMAILCLI" Type="varchar" Mode="In" />
+    <Parameter Name="MEMID" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="InsertarMembresiaSP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MEMID" Type="varchar" Mode="In" />
+    <Parameter Name="CLIID" Type="varchar" Mode="In" />
+    <Parameter Name="FECHAREGMEM" Type="varchar" Mode="In" />
+    <Parameter Name="FECHAEXOMEM" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="InsertarPeliculaSP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PELID" Type="varchar" Mode="In" />
+    <Parameter Name="NOMPEL" Type="varchar" Mode="In" />
+    <Parameter Name="DIRPEL" Type="varchar" Mode="In" />
+    <Parameter Name="GENPEL" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="InsertarRentaSP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RENID" Type="varchar" Mode="In" />
+    <Parameter Name="PELID" Type="varchar" Mode="In" />
+    <Parameter Name="CLID" Type="varchar" Mode="In" />
+    <Parameter Name="FECHA1" Type="varchar" Mode="In" />
+    <Parameter Name="FECHA2" Type="varchar" Mode="In" />
+    <Parameter Name="FECHA3" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SeleccionarClientePorID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CLIID" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SeleccionarClientes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SeleccionarClientesPorID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CLIID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SeleccionarMembresiasSP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SeleccionarPeliculasSP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SeleccionarRentasSP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="RentaPeliculasModelStoreContainer">
+    <EntitySet Name="CLIENTE" EntityType="Self.CLIENTE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FICHARENTA" EntityType="Self.FICHARENTA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MEMBRESIA" EntityType="Self.MEMBRESIA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PELICULA" EntityType="Self.PELICULA" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_CLIENTE_RELATIONS_MEMBRESI" Association="Self.FK_CLIENTE_RELATIONS_MEMBRESI">
+      <End Role="MEMBRESIA" EntitySet="MEMBRESIA" />
+      <End Role="CLIENTE" EntitySet="CLIENTE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FICHAREN_RELATIONS_CLIENTE" Association="Self.FK_FICHAREN_RELATIONS_CLIENTE">
+      <End Role="CLIENTE" EntitySet="CLIENTE" />
+      <End Role="FICHARENTA" EntitySet="FICHARENTA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FICHAREN_RELATIONS_PELICULA" Association="Self.FK_FICHAREN_RELATIONS_PELICULA">
+      <End Role="PELICULA" EntitySet="PELICULA" />
+      <End Role="FICHARENTA" EntitySet="FICHARENTA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MEMBRESI_RELATIONS_CLIENTE" Association="Self.FK_MEMBRESI_RELATIONS_CLIENTE">
+      <End Role="CLIENTE" EntitySet="CLIENTE" />
+      <End Role="MEMBRESIA" EntitySet="MEMBRESIA" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

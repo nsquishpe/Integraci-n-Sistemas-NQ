@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Retiro">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="n2" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetiroResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RetiroResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="RetiroSoapIn">
+    <wsdl:part name="parameters" element="tns:Retiro" />
+  </wsdl:message>
+  <wsdl:message name="RetiroSoapOut">
+    <wsdl:part name="parameters" element="tns:RetiroResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SWWithdrawalSoap">
+    <wsdl:operation name="Retiro">
+      <wsdl:input message="tns:RetiroSoapIn" />
+      <wsdl:output message="tns:RetiroSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SWWithdrawalSoap" type="tns:SWWithdrawalSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Retiro">
+      <soap:operation soapAction="http://tempuri.org/Retiro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SWWithdrawalSoap12" type="tns:SWWithdrawalSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Retiro">
+      <soap12:operation soapAction="http://tempuri.org/Retiro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SWWithdrawal">
+    <wsdl:port name="SWWithdrawalSoap" binding="tns:SWWithdrawalSoap">
+      <soap:address location="http://localhost:11091/SWWithdrawal.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SWWithdrawalSoap12" binding="tns:SWWithdrawalSoap12">
+      <soap12:address location="http://localhost:11091/SWWithdrawal.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RentaPeliculasModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CLIENTE">
+    <Key>
+      <PropertyRef Name="CLIID" />
+    </Key>
+    <Property Name="CLIID" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MEMID" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="NOMBRECLI" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CEDULACLI" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EMAILCLI" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="MEMBRESIA" Relationship="Self.FK_CLIENTE_RELATIONS_MEMBRESI" FromRole="CLIENTE" ToRole="MEMBRESIA" />
+    <NavigationProperty Name="FICHARENTA" Relationship="Self.FK_FICHAREN_RELATIONS_CLIENTE" FromRole="CLIENTE" ToRole="FICHARENTA" />
+    <NavigationProperty Name="MEMBRESIA1" Relationship="Self.FK_MEMBRESI_RELATIONS_CLIENTE" FromRole="CLIENTE" ToRole="MEMBRESIA" />
+  </EntityType>
+  <EntityType Name="FICHARENTA">
+    <Key>
+      <PropertyRef Name="RENTID" />
+    </Key>
+    <Property Name="RENTID" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PELIID" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CLIID" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FECHAREGRENT" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FECHADEVRENT" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FECHAENTRENT" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="CLIENTE" Relationship="Self.FK_FICHAREN_RELATIONS_CLIENTE" FromRole="FICHARENTA" ToRole="CLIENTE" />
+    <NavigationProperty Name="PELICULA" Relationship="Self.FK_FICHAREN_RELATIONS_PELICULA" FromRole="FICHARENTA" ToRole="PELICULA" />
+  </EntityType>
+  <EntityType Name="MEMBRESIA">
+    <Key>
+      <PropertyRef Name="MEMID" />
+    </Key>
+    <Property Name="MEMID" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CLIID" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FECHAREGMEM" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FECHAEXOMEM" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="CLIENTE" Relationship="Self.FK_CLIENTE_RELATIONS_MEMBRESI" FromRole="MEMBRESIA" ToRole="CLIENTE" />
+    <NavigationProperty Name="CLIENTE1" Relationship="Self.FK_MEMBRESI_RELATIONS_CLIENTE" FromRole="MEMBRESIA" ToRole="CLIENTE" />
+  </EntityType>
+  <EntityType Name="PELICULA">
+    <Key>
+      <PropertyRef Name="PELIID" />
+    </Key>
+    <Property Name="PELIID" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NOMBREPELI" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DIRECTORPELI" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="GENEROPELI" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="FICHARENTA" Relationship="Self.FK_FICHAREN_RELATIONS_PELICULA" FromRole="PELICULA" ToRole="FICHARENTA" />
+  </EntityType>
+  <Association Name="FK_CLIENTE_RELATIONS_MEMBRESI">
+    <End Role="MEMBRESIA" Type="Self.MEMBRESIA" Multiplicity="0..1" />
+    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MEMBRESIA">
+        <PropertyRef Name="MEMID" />
+      </Principal>
+      <Dependent Role="CLIENTE">
+        <PropertyRef Name="MEMID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FICHAREN_RELATIONS_CLIENTE">
+    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="1" />
+    <End Role="FICHARENTA" Type="Self.FICHARENTA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENTE">
+        <PropertyRef Name="CLIID" />
+      </Principal>
+      <Dependent Role="FICHARENTA">
+        <PropertyRef Name="CLIID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MEMBRESI_RELATIONS_CLIENTE">
+    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="1" />
+    <End Role="MEMBRESIA" Type="Self.MEMBRESIA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENTE">
+        <PropertyRef Name="CLIID" />
+      </Principal>
+      <Dependent Role="MEMBRESIA">
+        <PropertyRef Name="CLIID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FICHAREN_RELATIONS_PELICULA">
+    <End Role="PELICULA" Type="Self.PELICULA" Multiplicity="1" />
+    <End Role="FICHARENTA" Type="Self.FICHARENTA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PELICULA">
+        <PropertyRef Name="PELIID" />
+      </Principal>
+      <Dependent Role="FICHARENTA">
+        <PropertyRef Name="PELIID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="RentaPeliculasEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CLIENTE" EntityType="Self.CLIENTE" />
+    <EntitySet Name="FICHARENTA" EntityType="Self.FICHARENTA" />
+    <EntitySet Name="MEMBRESIA" EntityType="Self.MEMBRESIA" />
+    <EntitySet Name="PELICULA" EntityType="Self.PELICULA" />
+    <AssociationSet Name="FK_CLIENTE_RELATIONS_MEMBRESI" Association="Self.FK_CLIENTE_RELATIONS_MEMBRESI">
+      <End Role="MEMBRESIA" EntitySet="MEMBRESIA" />
+      <End Role="CLIENTE" EntitySet="CLIENTE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FICHAREN_RELATIONS_CLIENTE" Association="Self.FK_FICHAREN_RELATIONS_CLIENTE">
+      <End Role="CLIENTE" EntitySet="CLIENTE" />
+      <End Role="FICHARENTA" EntitySet="FICHARENTA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MEMBRESI_RELATIONS_CLIENTE" Association="Self.FK_MEMBRESI_RELATIONS_CLIENTE">
+      <End Role="CLIENTE" EntitySet="CLIENTE" />
+      <End Role="MEMBRESIA" EntitySet="MEMBRESIA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FICHAREN_RELATIONS_PELICULA" Association="Self.FK_FICHAREN_RELATIONS_PELICULA">
+      <End Role="PELICULA" EntitySet="PELICULA" />
+      <End Role="FICHARENTA" EntitySet="FICHARENTA" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

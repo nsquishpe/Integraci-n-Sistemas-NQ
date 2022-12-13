@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FordModelStoreContainer" CdmEntityContainer="FordEntities1">
+    <EntitySetMapping Name="Auto_FORD">
+      <EntityTypeMapping TypeName="FordModel.Auto_FORD">
+        <MappingFragment StoreEntitySet="Auto_FORD">
+          <ScalarProperty Name="img_Ford" ColumnName="img_Ford" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Marca_Ford" ColumnName="Marca_Ford" />
+          <ScalarProperty Name="Modelo_Ford" ColumnName="Modelo_Ford" />
+          <ScalarProperty Name="Cilindraje_Ford" ColumnName="Cilindraje_Ford" />
+          <ScalarProperty Name="Anio_Ford" ColumnName="Anio_Ford" />
+          <ScalarProperty Name="Color_Ford" ColumnName="Color_Ford" />
+          <ScalarProperty Name="Tipo_Ford" ColumnName="Tipo_Ford" />
+          <ScalarProperty Name="Con_Ford" ColumnName="Con_Ford" />
+          <ScalarProperty Name="Fecha_Ford" ColumnName="Fecha_Ford" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

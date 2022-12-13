@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="WithdrawalBalance.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="WithdrawalBalance_SWWithdrawal_SWWithdrawal" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:11091/SWWithdrawal.asmx</Value>
+    </Setting>
+    <Setting Name="WithdrawalBalance_SWBalance_SWBalance" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:11090/SWBalance.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

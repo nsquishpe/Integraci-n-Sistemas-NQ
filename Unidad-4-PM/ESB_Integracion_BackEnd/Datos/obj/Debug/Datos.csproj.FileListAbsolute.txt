@@ -1,0 +1,13 @@
+C:\Users\Laptop\Documents\6to_Semestre\IntegraciónSistemasServicios\Unidad4\ESB_Integracion_BackEnd\Datos\bin\Debug\Datos.dll
+C:\Users\Laptop\Documents\6to_Semestre\IntegraciónSistemasServicios\Unidad4\ESB_Integracion_BackEnd\Datos\bin\Debug\Datos.pdb
+C:\Users\Laptop\Documents\6to_Semestre\IntegraciónSistemasServicios\Unidad4\ESB_Integracion_BackEnd\Datos\bin\Debug\EntityFramework.dll
+C:\Users\Laptop\Documents\6to_Semestre\IntegraciónSistemasServicios\Unidad4\ESB_Integracion_BackEnd\Datos\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Laptop\Documents\6to_Semestre\IntegraciónSistemasServicios\Unidad4\ESB_Integracion_BackEnd\Datos\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Laptop\Documents\6to_Semestre\IntegraciónSistemasServicios\Unidad4\ESB_Integracion_BackEnd\Datos\bin\Debug\EntityFramework.xml
+C:\Users\Laptop\Documents\6to_Semestre\IntegraciónSistemasServicios\Unidad4\ESB_Integracion_BackEnd\Datos\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Laptop\Documents\6to_Semestre\IntegraciónSistemasServicios\Unidad4\ESB_Integracion_BackEnd\Datos\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Laptop\Documents\6to_Semestre\IntegraciónSistemasServicios\Unidad4\ESB_Integracion_BackEnd\Datos\obj\Debug\Datos.csproj.AssemblyReference.cache
+C:\Users\Laptop\Documents\6to_Semestre\IntegraciónSistemasServicios\Unidad4\ESB_Integracion_BackEnd\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
+C:\Users\Laptop\Documents\6to_Semestre\IntegraciónSistemasServicios\Unidad4\ESB_Integracion_BackEnd\Datos\obj\Debug\Datos.csproj.CopyComplete
+C:\Users\Laptop\Documents\6to_Semestre\IntegraciónSistemasServicios\Unidad4\ESB_Integracion_BackEnd\Datos\obj\Debug\Datos.dll
+C:\Users\Laptop\Documents\6to_Semestre\IntegraciónSistemasServicios\Unidad4\ESB_Integracion_BackEnd\Datos\obj\Debug\Datos.pdb

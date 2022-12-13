@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="AppOrdenesCompra.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="AppOrdenesCompra_RefArticulos_SWArticulos" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://localhost:44339/SWArticulos.asmx</Value>
+    </Setting>
+    <Setting Name="AppOrdenesCompra_RefProovedores_SWProovedores" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://localhost:44375/SWProovedores.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ArticuloModelStoreContainer" CdmEntityContainer="ArticuloEntities">
+    <EntitySetMapping Name="Articulos">
+      <EntityTypeMapping TypeName="ArticuloModel.Articulos">
+        <MappingFragment StoreEntitySet="Articulos">
+          <ScalarProperty Name="ArtID" ColumnName="ArtID" />
+          <ScalarProperty Name="ArtDescrip" ColumnName="ArtDescrip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
